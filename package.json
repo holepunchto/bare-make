@@ -1,0 +1,56 @@
+{
+  "name": "bare-make",
+  "version": "1.0.0",
+  "description": "Opinionated build system generator based on CMake",
+  "exports": {
+    ".": "./index.js",
+    "./package": "./package.json",
+    "./errors": "./lib/errors.js",
+    "./build": "./lib/build.js",
+    "./generate": "./lib/generate.js",
+    "./install": "./lib/install.js"
+  },
+  "bin": {
+    "bare-make": "bin.js"
+  },
+  "files": [
+    "index.js",
+    "bin.js",
+    "lib",
+    "bin"
+  ],
+  "imports": {
+    "os": {
+      "bare": "bare-os",
+      "default": "os"
+    },
+    "path": {
+      "bare": "bare-path",
+      "default": "path"
+    }
+  },
+  "scripts": {
+    "test": "standard && bare test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holepunchto/bare-make.git"
+  },
+  "author": "Holepunch",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/holepunchto/bare-make/issues"
+  },
+  "homepage": "https://github.com/holepunchto/bare-make#readme",
+  "dependencies": {
+    "bare-os": "^3.2.0",
+    "bare-path": "^3.0.0",
+    "cmake-runtime": "^3.30.6-2",
+    "cmake-toolchains": "^1.0.1",
+    "paparam": "^1.4.4"
+  },
+  "devDependencies": {
+    "brittle": "^3.2.1",
+    "standard": "^17.0.0"
+  }
+}
