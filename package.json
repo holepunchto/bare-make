@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/holepunchto/bare-make#readme",
   "dependencies": {
+    "bare-env": "^3.0.0",
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
     "cmake-runtime": "^3.30.6-2",
