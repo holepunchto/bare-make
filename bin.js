@@ -16,8 +16,8 @@ const generate = command(
   flag('--sanitize <name>', 'Enable a sanitizer'),
   flag('--define|-D <var>[:<type>]=<value>', 'Create or update a build variable cache entry'),
   flag('--verbose', 'Enable verbose output'),
-  async () => {
-    const { source, build, platform, arch, simulator, cache, debug, sanitize, define, verbose } = generate.flags
+  async (cmd) => {
+    const { source, build, platform, arch, simulator, cache, debug, sanitize, define, verbose } = cmd.flags
 
     try {
       await make.generate({
@@ -47,13 +47,14 @@ const build = command(
   flag('--clean|-c', 'Clean before building'),
   flag('--parallel|-j <number>', 'Build in parallel using the given number of jobs'),
   flag('--verbose', 'Enable verbose output'),
-  async () => {
-    const { build, target, parallel, verbose } = generate.flags
+  async (cmd) => {
+    const { build, target, clean, parallel, verbose } = cmd.flags
 
     try {
       await make.build({
         build,
         target,
+        clean,
         parallel,
         verbose,
         stdio: 'inherit'
@@ -72,8 +73,8 @@ const install = command(
   flag('--component|-c <name>', 'The component to install'),
   flag('--parallel|-j <number>', 'Install in parallel using the given number of jobs'),
   flag('--verbose', 'Enable verbose output'),
-  async () => {
-    const { build, prefix, component, parallel, verbose } = generate.flags
+  async (cmd) => {
+    const { build, prefix, component, parallel, verbose } = cmd.flags
 
     try {
       await make.install({
