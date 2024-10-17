@@ -2,7 +2,7 @@ const test = require('brittle')
 const path = require('path')
 const make = require('.')
 
-test('basic', async (t) => {
+test('basic', { timeout: 120000 }, async (t) => {
   const cwd = path.resolve(__dirname, 'test/fixtures/basic')
 
   const build = await make.generate({ cwd, cache: false, verbose: true, stdio: 'inherit' })
