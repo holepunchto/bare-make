@@ -93,12 +93,37 @@ const install = command(
   }
 )
 
+const test = command(
+  'test',
+  summary('Run tests for a generated build tree'),
+  flag('--build|-b <path>', 'The path to the build tree'),
+  flag('--timeout <seconds>', 'The default test timeout'),
+  flag('--parallel|-j <number>', 'Run tests in parallel using the given number of jobs'),
+  flag('--verbose', 'Enable verbose output'),
+  async (cmd) => {
+    const { build, timeout, parallel, verbose } = cmd.flags
+
+    try {
+      await make.test({
+        build,
+        timeout,
+        parallel,
+        verbose,
+        stdio: 'inherit'
+      })
+    } catch {
+      process.exitCode = 1
+    }
+  }
+)
+
 const cmd = command(
   'bare-make',
   summary(pkg.description),
   generate,
   build,
-  install
+  install,
+  test
 )
 
 cmd.parse()

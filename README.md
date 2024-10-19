@@ -26,6 +26,20 @@ bare-make build
 bare-make install
 ```
 
+### Testing
+
+To run tests for projects that use [`enable_testing()`](https://cmake.org/cmake/help/latest/command/enable_testing.html#command:enable_testing) and [`add_test()`](https://cmake.org/cmake/help/latest/command/add_test.html#command:add_test), do:
+
+```js
+await make.test()
+```
+
+Tests can also be run from the command line:
+
+```console
+bare-make test
+```
+
 ## API
 
 #### `await generate([options])`
@@ -82,6 +96,21 @@ Options include:
 }
 ```
 
+#### `await test([options])`
+
+Options include:
+
+```js
+{
+  build: 'build',
+  timeout: 30,
+  parallel,
+  cwd: path.resolve('.'),
+  verbose: false,
+  stdio
+}
+```
+
 ## CLI
 
 #### `generate [flags]`
@@ -124,6 +153,18 @@ Flags include:
 --prefix|-p <path>
 --component|-c <name>
 --link|-l
+--parallel|-j <number>
+--verbose
+--help|-h
+```
+
+#### `test [flags]`
+
+Flags include:
+
+```console
+--build|-b <path>
+--timeout <seconds>
 --parallel|-j <number>
 --verbose
 --help|-h

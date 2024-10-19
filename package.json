@@ -8,7 +8,8 @@
     "./errors": "./lib/errors.js",
     "./build": "./lib/build.js",
     "./generate": "./lib/generate.js",
-    "./install": "./lib/install.js"
+    "./install": "./lib/install.js",
+    "./test": "./lib/test.js"
   },
   "bin": {
     "bare-make": "bin.js"
