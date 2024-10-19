@@ -47,9 +47,9 @@
     "bare-env": "^3.0.0",
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
-    "cmake-runtime": "^3.30.6-2",
+    "cmake-runtime": "^3.30.6-0",
     "cmake-toolchains": "^1.0.1",
-    "ninja-runtime": "^1.12.1",
+    "ninja-runtime": "^1.12.2-0",
     "paparam": "^1.4.4"
   },
   "devDependencies": {
