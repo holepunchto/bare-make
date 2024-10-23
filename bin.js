@@ -14,7 +14,7 @@ const generate = command(
   flag('--no-cache', 'Disregard the build variable cache'),
   flag('--debug|-d', 'Configure a debug build'),
   flag('--sanitize <name>', 'Enable a sanitizer'),
-  flag('--define|-D <var>[:<type>]=<value>', 'Create or update a build variable cache entry'),
+  flag('--define|-D <var>[:<type>]=<value>', 'Create or update a build variable cache entry').multiple(),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
     const { source, build, platform, arch, simulator, cache, debug, sanitize, define, verbose } = cmd.flags
