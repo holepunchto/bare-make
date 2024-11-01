@@ -28,6 +28,10 @@
     "path": {
       "bare": "bare-path",
       "default": "path"
+    },
+    "process": {
+      "bare": "bare-process",
+      "default": "process"
     }
   },
   "scripts": {
@@ -47,6 +51,7 @@
     "bare-env": "^3.0.0",
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
+    "bare-process": "^3.0.0",
     "cmake-runtime": "^3.30.6-0",
     "cmake-toolchains": "^1.0.1",
     "ninja-runtime": "^1.12.2-0",

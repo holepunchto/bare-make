@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const process = require('process')
 const { command, flag, summary } = require('paparam')
 const pkg = require('./package')
 const make = require('.')
@@ -120,10 +121,18 @@ const test = command(
 const cmd = command(
   'bare-make',
   summary(pkg.description),
+  flag('--version|-v', 'Print the current version'),
   generate,
   build,
   install,
-  test
+  test,
+  async (cmd) => {
+    const { version } = cmd.flags
+
+    if (version) return console.log(`v${pkg.version}`)
+
+    console.log(cmd.command.help())
+  }
 )
 
 cmd.parse()
