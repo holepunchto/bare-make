@@ -119,7 +119,7 @@ const test = command(
 )
 
 const cmd = command(
-  'bare-make',
+  pkg.name,
   summary(pkg.description),
   flag('--version|-v', 'Print the current version'),
   generate,

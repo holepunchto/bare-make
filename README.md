@@ -113,7 +113,7 @@ Options include:
 
 ## CLI
 
-#### `generate [flags]`
+#### `bare-make generate [flags]`
 
 Flags include:
 
@@ -131,7 +131,7 @@ Flags include:
 --help|-h
 ```
 
-#### `build [flags]`
+#### `bare-make build [flags]`
 
 Flags include:
 
@@ -144,7 +144,7 @@ Flags include:
 --help|-h
 ```
 
-#### `install [flags]`
+#### `bare-make install [flags]`
 
 Flags include:
 
@@ -158,7 +158,7 @@ Flags include:
 --help|-h
 ```
 
-#### `test [flags]`
+#### `bare-make test [flags]`
 
 Flags include:
 
