@@ -1,6 +1,6 @@
 {
   "name": "bare-make",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Opinionated build system generator based on CMake",
   "exports": {
     ".": "./index.js",
