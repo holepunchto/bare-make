@@ -17,8 +17,7 @@
   "files": [
     "index.js",
     "bin.js",
-    "lib",
-    "bin"
+    "lib"
   ],
   "imports": {
     "os": {
