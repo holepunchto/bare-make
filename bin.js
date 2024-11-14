@@ -73,10 +73,11 @@ const install = command(
   flag('--prefix|-p <path>', 'The prefix to install to'),
   flag('--component|-c <name>', 'The component to install'),
   flag('--link|-l', 'Link rather than copy the files'),
+  flag('--strip|-s', 'Strip before installing'),
   flag('--parallel|-j <number>', 'Install in parallel using the given number of jobs'),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
-    const { build, prefix, component, link, parallel, verbose } = cmd.flags
+    const { build, prefix, component, link, strip, parallel, verbose } = cmd.flags
 
     try {
       await make.install({
@@ -84,6 +85,7 @@ const install = command(
         prefix,
         component,
         link,
+        strip,
         parallel,
         verbose,
         stdio: 'inherit'

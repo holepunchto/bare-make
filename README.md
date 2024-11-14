@@ -89,6 +89,7 @@ Options include:
   prefix: 'prebuilds',
   component,
   link: false,
+  strip: false,
   parallel,
   cwd: path.resolve('.'),
   verbose: false,
@@ -153,6 +154,7 @@ Flags include:
 --prefix|-p <path>
 --component|-c <name>
 --link|-l
+--strip|-s
 --parallel|-j <number>
 --verbose
 --help|-h
