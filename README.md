@@ -47,7 +47,7 @@ bare-make test
 Options include:
 
 ```js
-{
+options = {
   source: '.',
   build: 'build',
   platform: os.platform(),
@@ -56,6 +56,8 @@ Options include:
   cache: true,
   sanitize,
   debug,
+  withDebugSymbols,
+  withMinimalSize,
   define,
   cwd: path.resolve('.'),
   verbose: false,
@@ -68,7 +70,7 @@ Options include:
 Options include:
 
 ```js
-{
+options = {
   build: 'build',
   target,
   clean: false,
@@ -84,7 +86,7 @@ Options include:
 Options include:
 
 ```js
-{
+options = {
   build: 'build',
   prefix: 'prebuilds',
   component,
@@ -102,7 +104,7 @@ Options include:
 Options include:
 
 ```js
-{
+options = {
   build: 'build',
   timeout: 30,
   parallel,
@@ -126,6 +128,8 @@ Flags include:
 --simulator
 --no-cache
 --debug|-d
+--with-debug-symbols
+--with-minimal-size
 --sanitize <name>
 --define|-D <var>[:<type>]=<value>
 --verbose

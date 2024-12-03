@@ -14,6 +14,8 @@ const generate = command(
   flag('--simulator', 'Build for a simulator'),
   flag('--no-cache', 'Disregard the build variable cache'),
   flag('--debug|-d', 'Configure a debug build'),
+  flag('--with-debug-symbols', 'Configure a release build with debug symbols'),
+  flag('--with-minimal-size', 'Configure a release build with minimal size'),
   flag('--sanitize <name>', 'Enable a sanitizer'),
   flag(
     '--define|-D <var>[:<type>]=<value>',
@@ -29,6 +31,8 @@ const generate = command(
       simulator,
       cache,
       debug,
+      withDebugSymbols,
+      withMinimalSize,
       sanitize,
       define,
       verbose
@@ -43,6 +47,8 @@ const generate = command(
         simulator,
         cache,
         debug,
+        withDebugSymbols,
+        withMinimalSize,
         sanitize,
         define,
         verbose,
