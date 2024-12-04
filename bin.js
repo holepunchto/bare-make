@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const process = require('process')
-const { command, flag, summary } = require('paparam')
+const { command, flag, summary, bail } = require('paparam')
 const pkg = require('./package')
 const make = require('.')
 
@@ -158,6 +158,7 @@ const cmd = command(
   build,
   install,
   test,
+  bail(explain),
   async (cmd) => {
     const { version } = cmd.flags
 
@@ -166,5 +167,19 @@ const cmd = command(
     console.log(cmd.command.help())
   }
 )
+
+function explain(bail) {
+  let reason = null
+  if (bail.reason === 'UNKNOWN_FLAG') {
+    reason = 'Unrecognized flag: --' + bail.flag.name
+  } else if (bail.reason === 'UNKNOWN_ARG' && bail.arg.index === 0) {
+    reason = 'Unrecognized command: "' + process.argv[2] + '"'
+  } else {
+    reason = bail.reason
+  }
+
+  console.log(reason)
+  console.log('\n' + bail.command.usage())
+}
 
 cmd.parse()
