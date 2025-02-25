@@ -127,6 +127,7 @@ Flags include:
 --platform|-p <name>
 --arch|-a <name>
 --simulator
+--environment|-e <name>
 --no-cache
 --debug|-d
 --with-debug-symbols
