@@ -53,6 +53,7 @@ options = {
   platform: os.platform(),
   arch: os.arch(),
   simulator: false,
+  environment: null,
   cache: true,
   sanitize,
   debug,
