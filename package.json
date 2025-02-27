@@ -3,19 +3,38 @@
   "version": "1.4.0",
   "description": "Opinionated build system generator based on CMake",
   "exports": {
-    ".": "./index.js",
-    "./package": "./package.json",
-    "./errors": "./lib/errors.js",
-    "./build": "./lib/build.js",
-    "./generate": "./lib/generate.js",
-    "./install": "./lib/install.js",
-    "./test": "./lib/test.js"
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./errors": {
+      "types": "./lib/errors.d.ts",
+      "default": "./lib/errors.js"
+    },
+    "./build": {
+      "types": "./lib/build.d.ts",
+      "default": "./lib/build.js"
+    },
+    "./generate": {
+      "types": "./lib/generate.d.ts",
+      "default": "./lib/generate.js"
+    },
+    "./install": {
+      "types": "./lib/install.d.ts",
+      "default": "./lib/install.js"
+    },
+    "./test": {
+      "types": "./lib/test.d.ts",
+      "default": "./lib/test.js"
+    },
+    "./package": "./package.json"
   },
   "bin": {
     "bare-make": "bin.js"
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "bin.js",
     "lib"
   ],
@@ -57,8 +76,17 @@
     "paparam": "^1.5.0"
   },
   "devDependencies": {
+    "bare-pipe": "^4.0.4",
     "brittle": "^3.2.1",
     "prettier": "^3.4.1",
     "prettier-config-standard": "^7.0.0"
+  },
+  "peerDependencies": {
+    "bare-pipe": "*"
+  },
+  "peerDependenciesMeta": {
+    "bare-pipe": {
+      "optional": true
+    }
   }
 }
