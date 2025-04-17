@@ -57,7 +57,8 @@ const generate = command(
         verbose,
         stdio: 'inherit'
       })
-    } catch {
+    } catch (err) {
+      if (err && err.code === 'UNKNOWN_TOOLCHAIN') console.error(err)
       process.exitCode = 1
     }
   }
