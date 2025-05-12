@@ -19,3 +19,11 @@ test('address sanitizier', { timeout: 120000 }, async (t) => {
 
   await t.execution(make.build({ cwd, clean: true }))
 })
+
+test('color', { timeout: 120000 }, async (t) => {
+  const cwd = path.resolve(__dirname, 'test/fixtures/basic')
+
+  await t.execution(make.generate({ cwd, cache: false, color: true }))
+
+  await t.execution(make.build({ cwd, clean: true }))
+})
