@@ -61,6 +61,7 @@ options = {
   withMinimalSize,
   define,
   cwd: path.resolve('.'),
+  color: false,
   verbose: false,
   stdio
 }
@@ -134,6 +135,7 @@ Flags include:
 --with-minimal-size
 --sanitize <name>
 --define|-D <var>[:<type>]=<value>
+--color
 --verbose
 --help|-h
 ```
