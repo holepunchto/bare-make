@@ -22,7 +22,7 @@ const generate = command(
     '--define|-D <var>[:<type>]=<value>',
     'Create or update a build variable cache entry'
   ).multiple(),
-  flag('--color', 'Enable colored diagnostics'),
+  flag('--color', 'Enable colored output').default(process.stdout.isTTY),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
     const {
