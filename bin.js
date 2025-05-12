@@ -22,6 +22,7 @@ const generate = command(
     '--define|-D <var>[:<type>]=<value>',
     'Create or update a build variable cache entry'
   ).multiple(),
+  flag('--color', 'Enable colored output').default(process.stdout.isTTY),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
     const {
@@ -37,6 +38,7 @@ const generate = command(
       withMinimalSize,
       sanitize,
       define,
+      color,
       verbose
     } = cmd.flags
 
@@ -54,6 +56,7 @@ const generate = command(
         withMinimalSize,
         sanitize,
         define,
+        color,
         verbose,
         stdio: 'inherit'
       })
