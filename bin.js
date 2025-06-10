@@ -23,6 +23,7 @@ const generate = command(
     'Create or update a build variable cache entry'
   ).multiple(),
   flag('--color', 'Enable colored output').default(process.stdout.isTTY),
+  flag('--no-color', 'Disable colored output'),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
     const {
