@@ -4,6 +4,7 @@ declare interface TestOptions {
   build?: string
   cwd?: string
   parallel?: number
+  preset?: string
   stdio?: Pipe
   timeout?: number
   verbose?: boolean

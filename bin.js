@@ -14,6 +14,7 @@ const generate = command(
   flag('--simulator', 'Build for a simulator'),
   flag('--environment|-e <name>', 'The environment to build for'),
   flag('--no-cache', 'Disregard the build variable cache'),
+  flag('--preset <name>', 'The preset to use'),
   flag('--debug|-d', 'Configure a debug build'),
   flag('--with-debug-symbols', 'Configure a release build with debug symbols'),
   flag('--with-minimal-size', 'Configure a release build with minimal size'),
@@ -34,6 +35,7 @@ const generate = command(
       simulator,
       environment,
       cache,
+      preset,
       debug,
       withDebugSymbols,
       withMinimalSize,
@@ -52,6 +54,7 @@ const generate = command(
         simulator,
         environment,
         cache,
+        preset,
         debug,
         withDebugSymbols,
         withMinimalSize,
@@ -78,9 +81,10 @@ const build = command(
     '--parallel|-j <number>',
     'Build in parallel using the given number of jobs'
   ),
+  flag('--preset <name>', 'The preset to use'),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
-    const { build, target, clean, parallel, verbose } = cmd.flags
+    const { build, target, clean, parallel, preset, verbose } = cmd.flags
 
     try {
       await make.build({
@@ -88,6 +92,7 @@ const build = command(
         target,
         clean,
         parallel,
+        preset,
         verbose,
         stdio: 'inherit'
       })
@@ -140,15 +145,17 @@ const test = command(
     '--parallel|-j <number>',
     'Run tests in parallel using the given number of jobs'
   ),
+  flag('--preset <name>', 'The preset to use'),
   flag('--verbose', 'Enable verbose output'),
   async (cmd) => {
-    const { build, timeout, parallel, verbose } = cmd.flags
+    const { build, timeout, parallel, preset, verbose } = cmd.flags
 
     try {
       await make.test({
         build,
         timeout,
         parallel,
+        preset,
         verbose,
         stdio: 'inherit'
       })

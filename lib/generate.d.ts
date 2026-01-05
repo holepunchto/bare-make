@@ -9,6 +9,7 @@ declare interface GenerateOptions {
   define?: string[]
   environment?: string
   platform?: string
+  preset?: string
   sanitize?: string
   simulator?: boolean
   source?: string

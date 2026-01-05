@@ -5,6 +5,7 @@ declare interface BuildOptions {
   clean?: boolean
   cwd?: string
   parallel?: number
+  preset?: string
   stdio?: Pipe
   target?: string
   verbose?: boolean
