@@ -87,7 +87,7 @@
     "bare-pipe": "^4.0.4",
     "brittle": "^3.2.1",
     "prettier": "^3.4.1",
-    "prettier-config-standard": "^7.0.0",
+    "prettier-config-holepunch": "^2.0.0",
     "which-runtime": "^1.3.2"
   },
   "peerDependencies": {
