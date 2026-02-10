@@ -31,9 +31,7 @@ test('address sanitizier', { skip: isWindows, timeout: 120000 }, async (t) => {
 test('color', { timeout: 120000 }, async (t) => {
   const cwd = path.resolve(__dirname, 'test/fixtures/basic')
 
-  await t.execution(
-    make.generate({ cwd, cache: false, color: true, stdio: 'inherit' })
-  )
+  await t.execution(make.generate({ cwd, cache: false, color: true, stdio: 'inherit' }))
 
   await t.execution(make.build({ cwd, clean: true, stdio: 'inherit' }))
 })
