@@ -19,6 +19,7 @@ const generate = command(
   flag('--with-debug-symbols', 'Configure a release build with debug symbols'),
   flag('--with-minimal-size', 'Configure a release build with minimal size'),
   flag('--sanitize <name>', 'Enable a sanitizer'),
+  flag('--fuzz', 'Configure for fuzzing'),
   flag(
     '--define|-D <var>[:<type>]=<value>',
     'Create or update a build variable cache entry'
@@ -40,6 +41,7 @@ const generate = command(
       withDebugSymbols,
       withMinimalSize,
       sanitize,
+      fuzz,
       define,
       color,
       verbose
@@ -59,6 +61,7 @@ const generate = command(
         withDebugSymbols,
         withMinimalSize,
         sanitize,
+        fuzz,
         define,
         color,
         verbose,
