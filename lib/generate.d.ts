@@ -8,6 +8,7 @@ declare interface GenerateOptions {
   debug?: boolean
   define?: string[]
   environment?: string
+  fuzz?: boolean
   platform?: string
   preset?: string
   sanitize?: string

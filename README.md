@@ -57,6 +57,7 @@ options = {
   cache: true,
   preset,
   sanitize,
+  fuzz,
   debug,
   withDebugSymbols,
   withMinimalSize,
@@ -138,6 +139,7 @@ Flags include:
 --with-debug-symbols                 Configure a release build with debug symbols
 --with-minimal-size                  Configure a release build with minimal size
 --sanitize <name>                    Enable a sanitizer
+--fuzz                               Configure for fuzzing
 --define|-D <var>[:<type>]=<value>   Create or update a build variable cache entry
 --no-color                           Disable colored output
 --verbose                            Enable verbose output
