@@ -42,7 +42,7 @@ bare-make test
 
 ## API
 
-See the [full API reference](https://docs.pears.com/reference/bare/modules/bare-make).
+See the [`bare-make` reference](https://docs.pears.com/reference/bare/modules/bare-make).
 
 ## CLI
 
