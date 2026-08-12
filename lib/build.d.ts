@@ -21,7 +21,8 @@ declare interface BuildOptions {
 }
 
 /**
- * @param opts - Options; `build` defaults to `'build'` (unset when `preset` is set), `parallel` to `0`, and `clean` and `verbose` to `false`.
+ * @param opts - Options; `build` defaults to `'build'` (unset when `preset` is set), `parallel` to
+ * `0`, and `clean` and `verbose` to `false`.
  * @throws {BUILD_FAILED} the build exits with a non-zero status.
  */
 declare function build(opts?: BuildOptions): Promise<void>

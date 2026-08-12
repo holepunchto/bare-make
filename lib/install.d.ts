@@ -23,7 +23,8 @@ declare interface InstallOptions {
 }
 
 /**
- * @param opts - Options; `build` defaults to `'build'`, `prefix` to `'prebuilds'`, and `link`, `strip`, and `verbose` to `false`.
+ * @param opts - Options; `build` defaults to `'build'`, `prefix` to `'prebuilds'`, and `link`,
+ * `strip`, and `verbose` to `false`.
  * @throws {INSTALL_FAILED} the install exits with a non-zero status.
  */
 declare function install(opts?: InstallOptions): Promise<void>

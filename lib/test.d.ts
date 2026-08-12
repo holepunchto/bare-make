@@ -19,7 +19,8 @@ declare interface TestOptions {
 }
 
 /**
- * @param opts - Options; `build` defaults to `'build'`, `timeout` to `30` seconds, `parallel` to `-1`, and `verbose` to `false`.
+ * @param opts - Options; `build` defaults to `'build'`, `timeout` to `30` seconds, `parallel` to
+ * `-1`, and `verbose` to `false`.
  * @throws {TEST_FAILED} one or more tests fail.
  */
 declare function test(opts?: TestOptions): Promise<void>

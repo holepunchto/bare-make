@@ -3,7 +3,8 @@ declare class MakeError extends Error {
    * Construct a `MakeError` with the given message and `code`.
    * @param msg - Human-readable error message.
    * @param code - The error code, assigned to `err.code`.
-   * @param fn - The function to omit from the captured stack trace (default the `MakeError` constructor).
+   * @param fn - The function to omit from the captured stack trace (default the `MakeError`
+   * constructor).
    */
   constructor(msg: string, code: string, fn?: MakeError)
 

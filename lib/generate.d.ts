@@ -12,7 +12,10 @@ declare interface GenerateOptions {
   cwd?: string
   /** Configure a debug build (default `false`). */
   debug?: boolean
-  /** Build variable cache entries to create or update, as `<var>[:<type>]=<value>` strings (default `[]`). */
+  /**
+   * Build variable cache entries to create or update, as `<var>[:<type>]=<value>` strings (default
+   * `[]`).
+   */
   define?: string[]
   /** The environment to build for (default none). */
   environment?: string
@@ -39,7 +42,9 @@ declare interface GenerateOptions {
 }
 
 /**
- * @param opts - Options; `source` defaults to `'.'`, `build` to `'build'`, `platform` and `arch` to the host, `cache` to `true`, and the build-type flags (`debug`, `fuzz`, `withDebugSymbols`, `withMinimalSize`, `verbose`) to `false`.
+ * @param opts - Options; `source` defaults to `'.'`, `build` to `'build'`, `platform` and `arch` to
+ * the host, `cache` to `true`, and the build-type flags (`debug`, `fuzz`, `withDebugSymbols`,
+ * `withMinimalSize`, `verbose`) to `false`.
  * @throws {UNKNOWN_TOOLCHAIN} no toolchain is available for the resolved `platform`-`arch` target.
  * @throws {GENERATE_FAILED} build system generation exits with a non-zero status.
  */
