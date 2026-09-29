@@ -1,6 +1,5 @@
 const test = require('brittle')
 const path = require('path')
-const { isWindows } = require('which-runtime')
 const make = require('.')
 
 test('basic', { timeout: 120000 }, async (t) => {
@@ -13,7 +12,7 @@ test('basic', { timeout: 120000 }, async (t) => {
   await t.execution(make.install({ cwd, stdio: 'inherit' }))
 })
 
-test('address sanitizier', { skip: isWindows, timeout: 120000 }, async (t) => {
+test('address sanitizier', { timeout: 120000 }, async (t) => {
   const cwd = path.resolve(__dirname, 'test/fixtures/basic')
 
   await t.execution(
