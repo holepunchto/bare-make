@@ -3,6 +3,7 @@
   "version": "1.8.0",
   "description": "Opinionated build system generator based on CMake",
   "exports": {
+    "./package": "./package.json",
     ".": {
       "types": "./index.d.ts",
       "default": "./index.js"
@@ -26,8 +27,7 @@
     "./test": {
       "types": "./lib/test.d.ts",
       "default": "./lib/test.js"
-    },
-    "./package": "./package.json"
+    }
   },
   "bin": {
     "bare-make": "bin.js"
@@ -39,6 +39,10 @@
     "lib"
   ],
   "imports": {
+    "#env": {
+      "bare": "./lib/env/bare.js",
+      "node": "./lib/env/node.js"
+    },
     "fs": {
       "bare": "bare-fs",
       "default": "fs"
@@ -50,10 +54,6 @@
     "path": {
       "bare": "bare-path",
       "default": "path"
-    },
-    "process": {
-      "bare": "bare-process",
-      "default": "process"
     }
   },
   "scripts": {
@@ -78,7 +78,6 @@
     "bare-fs": "^4.4.4",
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
-    "bare-process": "^4.0.0",
     "cmake-runtime": "^4.1.1",
     "cmake-toolchains": "^2.0.1",
     "llvm-runtime": "^23.1.0",
