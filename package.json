@@ -50,10 +50,6 @@
     "path": {
       "bare": "bare-path",
       "default": "path"
-    },
-    "process": {
-      "bare": "bare-process",
-      "default": "process"
     }
   },
   "scripts": {
@@ -78,7 +74,6 @@
     "bare-fs": "^4.4.4",
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
-    "bare-process": "^4.0.0",
     "cmake-runtime": "^4.1.1",
     "cmake-toolchains": "^2.0.1",
     "llvm-runtime": "^23.1.0",
