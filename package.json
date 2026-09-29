@@ -1,6 +1,6 @@
 {
   "name": "bare-make",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "description": "Opinionated build system generator based on CMake",
   "exports": {
     "./package": "./package.json",
