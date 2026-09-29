@@ -80,7 +80,7 @@
     "bare-path": "^3.0.0",
     "bare-process": "^4.0.0",
     "cmake-runtime": "^4.1.1",
-    "cmake-toolchains": "^2.0.0",
+    "cmake-toolchains": "^2.0.1",
     "llvm-runtime": "^23.1.0",
     "nasm-runtime": "^3.2.0",
     "ninja-runtime": "^1.13.1",
