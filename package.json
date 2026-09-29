@@ -80,7 +80,7 @@
     "bare-path": "^3.0.0",
     "bare-process": "^4.0.0",
     "cmake-runtime": "^4.1.1",
-    "cmake-toolchains": "^2.0.0",
+    "cmake-toolchains": "^2.0.1",
     "llvm-runtime": "^23.1.0",
     "nasm-runtime": "^3.2.0",
     "ninja-runtime": "^1.13.1",
@@ -91,8 +91,7 @@
     "brittle": "^3.2.1",
     "lunte": "^1.8.0",
     "prettier": "^3.4.1",
-    "prettier-config-holepunch": "^2.0.0",
-    "which-runtime": "^1.3.2"
+    "prettier-config-holepunch": "^2.0.0"
   },
   "peerDependencies": {
     "bare-pipe": "*"
