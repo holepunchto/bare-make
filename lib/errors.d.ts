@@ -33,6 +33,11 @@ declare class MakeError extends Error {
    * @param msg - Human-readable error message.
    */
   static TEST_FAILED(msg: string): MakeError
+  /**
+   * Create a `MakeError` with code `'ENV_FAILED'`.
+   * @param msg - Human-readable error message.
+   */
+  static ENV_FAILED(msg: string): MakeError
 }
 
 export = MakeError

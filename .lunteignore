@@ -2,3 +2,4 @@ lib/build.d.ts
 lib/generate.d.ts
 lib/install.d.ts
 lib/test.d.ts
+lib/test-env.d.ts
