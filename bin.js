@@ -132,6 +132,26 @@ const install = command(
   }
 )
 
+const env = command(
+  'env',
+  summary('Print the environment that tests run with'),
+  flag('--build|-b <path>', 'The path to the build tree'),
+  async (cmd) => {
+    const { build } = cmd.flags
+
+    try {
+      const result = await make.test.env({ build })
+
+      for (const [name, value] of Object.entries(result)) {
+        console.log(`${name}=${value}`)
+      }
+    } catch (err) {
+      if (err && err.code === 'ENV_FAILED') console.error(err)
+      process.exitCode = 1
+    }
+  }
+)
+
 const test = command(
   'test',
   summary('Run tests for a generated build tree'),
@@ -140,6 +160,7 @@ const test = command(
   flag('--parallel|-j <number>', 'Run tests in parallel using the given number of jobs'),
   flag('--preset <name>', 'The preset to use'),
   flag('--verbose', 'Enable verbose output'),
+  env,
   async (cmd) => {
     const { build, timeout, parallel, preset, verbose } = cmd.flags
 

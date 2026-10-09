@@ -1,4 +1,5 @@
 import Pipe from 'bare-pipe'
+import env from './test-env'
 
 /** Options for `test()`. */
 declare interface TestOptions {
@@ -26,7 +27,7 @@ declare interface TestOptions {
 declare function test(opts?: TestOptions): Promise<void>
 
 declare namespace test {
-  export { type TestOptions }
+  export { type TestOptions, env }
 }
 
 export = test

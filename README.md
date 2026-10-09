@@ -40,6 +40,20 @@ Tests can also be run from the command line:
 bare-make test
 ```
 
+### Environment
+
+Programs built with some toolchains need environment changes to run, such as the sanitizer runtimes on Windows or the symbolizer that the sanitizers use. `bare-make test` applies these automatically, but programs run outside of CTest, such as a JavaScript test suite loading an addon, must apply them themselves. To get the variables to set, do:
+
+```js
+const env = await make.test.env()
+```
+
+The variables can also be printed from the command line as `NAME=value` lines:
+
+```console
+bare-make test env
+```
+
 ## API
 
 See the [`bare-make` reference](https://docs.pears.com/reference/bare/modules/bare-make).
@@ -110,6 +124,15 @@ Flags include:
 --preset <name>          The preset to use
 --verbose                Enable verbose output
 --help|-h                Show help
+```
+
+#### `bare-make test env [flags]`
+
+Flags include:
+
+```console
+--build|-b <path>   The path to the build tree
+--help|-h           Show help
 ```
 
 ## License
