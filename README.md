@@ -44,7 +44,7 @@ bare-make test
 
 Programs built with some toolchains need environment changes to run, such as the sanitizer runtimes on Windows or the symbolizer that the sanitizers use. `bare-make test` applies these automatically, but programs run outside of CTest, such as a JavaScript test suite loading an addon, must apply them themselves. To get the variables to set, do:
 
-A module built with AddressSanitizer only reports inside a program that was not, such as an addon in a prebuilt runtime, once the runtime is preloaded. The variables include the preload, so apply them to that program alone: the runtime takes itself out of the variable before starting children, and a program that links the runtime itself refuses a second copy.
+With `--sanitize address`, the variables also preload the AddressSanitizer runtime, through `LD_PRELOAD` on Linux and `DYLD_INSERT_LIBRARIES` on macOS. This is what lets a sanitized addon report bugs inside a `bare` that was not built with the sanitizer. Pass the variables to `bare` directly. Exporting them in a shell does not work.
 
 ```js
 const env = await make.test.env()
