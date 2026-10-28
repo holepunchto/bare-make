@@ -8,7 +8,7 @@ declare interface EnvOptions {
 
 /**
  * Resolve the environment variables that programs from the build tree need to run, as changed by
- * the test launcher.
+ * the test launcher, plus the AddressSanitizer runtime to preload into a program not built with it.
  * @param opts - Options; `build` defaults to `'build'`.
  * @returns The changed variables with their resolved values.
  * @throws {ENV_FAILED} the build tree does not exist or the environment cannot be resolved.
