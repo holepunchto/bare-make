@@ -79,8 +79,8 @@
     "bare-os": "^3.2.0",
     "bare-path": "^3.0.0",
     "cmake-runtime": "^4.1.1",
-    "cmake-toolchains": "^2.1.0",
-    "llvm-runtime": "^23.1.0",
+    "cmake-toolchains": "^2.2.1",
+    "llvm-runtime": "^23.1.6-0",
     "nasm-runtime": "^3.2.0",
     "ninja-runtime": "^1.13.1",
     "paparam": "^1.5.0"
